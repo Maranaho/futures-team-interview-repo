@@ -1,0 +1,196 @@
+body {
+  margin: 0 ;
+  font-family: sans-serif;
+  font-size: 14px;
+}
+canvas{display: none}
+button {
+  cursor:pointer;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 7px;
+  background: rgba(0,0,0,1);
+  color:#fff;
+  margin: 0 2px;
+  min-width: 30px;
+  font-size: .8em;
+}
+button:disabled{
+  opacity: .1;
+  cursor: not-allowed;
+}
+p{margin: 0}
+.description{
+  font-size: .8em;
+  margin: 10px 0;
+  opacity: .7;
+}
+
+.App {
+  min-height:100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.listNSerach{flex:1}
+.ProjectList {
+  padding: 20px 50px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 20px;
+}
+
+.ListItem {
+  box-shadow: 0 15px 20px rgba(0,0,0,.05);
+  padding: 30px;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,1);
+  cursor: pointer;
+}
+.ListItem p span{margin-right: 10px}
+
+header{
+  position: sticky;
+  top:0;
+  background: #fff;
+  z-index: 1;
+  padding-bottom: 20px;
+}
+.TopBar {
+  padding: 15px 50px;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #eee;
+}
+
+.Pagination {
+  display: flex;
+  justify-content: flex-end;
+  padding: 15px 50px;
+  position: sticky;
+  bottom:0;
+  background: #fff;
+  border-top: 1px solid #eee;
+}
+.SearchProject input:hover,
+.ListItem:hover {border: 1px solid #42a5f5}
+
+.morePages {position: relative}
+.morePages div {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  position: absolute;
+  bottom: 40px;
+  left: -30px;
+  grid-gap: 3px;
+  padding: 20px;
+  background: #fff;
+  box-shadow: 0 20px 40px rgba(0,0,0,.15);
+  border-radius: 10px;
+}
+.morePages div button{margin: 0}
+.SearchUploader,
+.SearchProject {
+  display: flex;
+  justify-content: center;
+  padding:50px 0;
+}
+.SearchUploader select{
+  border: none;
+  outline: none;
+  width: 80%;
+  height: 100%;
+  display: block;
+  padding: 20px;
+  background: none;
+  cursor: pointer;
+}
+.SearchProject input{
+  padding: 15px 30px;
+  border: 1px solid rgba(0,0,0,.3);
+  border-radius: 10px;
+  width: 40vw;
+}
+.SearchUploader {
+  border-radius: 10px;
+  padding: 0;
+  border: 1px solid rgba(0,0,0,.3);
+  width: 40vw;
+  margin: 0 auto;
+}
+
+.UploaderList{
+  display: flex;
+  justify-content: center;
+}
+
+.CurrentPage {
+  display: flex;
+  justify-content: flex-end;
+  font-size: .8em;
+  padding: 20px 50px;
+}
+
+.UploaderList button{background: #42a5f5}
+.UploaderList button:not(.active){opacity: .3}
+.PageClick.current {
+  background: #42a5f5;
+}
+
+.nothingToShow{
+  text-align: center;
+  padding: 50px 0;
+}
+
+.imgContainer {
+  width: 150px;
+  height: 150px;
+  overflow: hidden;
+  border-radius: 50%;
+  border:1px solid #ccc;
+  cursor: pointer;
+}
+.imgContainer:hover {border: 1px solid #42a5f5}
+.imgContainer img{
+  width: 150px;
+}
+
+.Contributors {
+  max-width: 30vw;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap-reverse;
+  flex-direction: row-reverse;
+  justify-content: center;
+}
+.Contributors article{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin: 10px;
+}
+.Contributors article strong {
+  display: block;
+  padding: 10px;
+}
+
+
+@media only screen and (max-width: 1300px) {
+  .ProjectList {grid-template-columns: 1fr 1fr 1fr}
+}
+
+@media only screen and (max-width: 1024px) {
+  .ProjectList {grid-template-columns: 1fr 1fr}
+}
+
+@media only screen and (max-width: 750px) {
+  .ProjectList {grid-template-columns: 1fr}
+}
+
+@media only screen and (max-width: 680px) {
+  .UploaderList {display:none}
+}
+
+@media only screen and (min-width: 680px) {
+  .SearchUploader {display:none}
+}
